@@ -2,15 +2,23 @@
 const { Schema, model } = require('mongoose')
 
 const orderSchema = new Schema({
-    name : {
+    city : {
         type: String,
-        required: [true, 'you must fill the product name'],
+        required: [true, 'you must fill the city name'],
     },    
-    price : {
-        type : Number,
-        required : [true, 'you must fill the price'],
+    date : {
+        type : Date,
+        required : [true, 'you must fill the date'],
     },    
     user : {type : Schema.Types.ObjectId, ref: 'User' },
+    sentDate : {
+        type : Date,
+        required : [true, 'you must fill the date'],
+    },
+    sentCity : {
+        type: String,
+        required: [true, 'you must fill the city name'],
+    },
 })
 
 const Order = model('Order', orderSchema)
